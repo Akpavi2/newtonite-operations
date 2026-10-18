@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Newtonite Ops | Operations Under Pressure</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div id="toast" class="toast" role="status"></div>
+  <section id="login-screen" class="login-wrap">
+    <div class="login-card">
+      <div class="brand-mark">N</div><p class="eyebrow">NEWTONITE · OPERATIONS</p>
+      <h1>Keep work<br><span>moving forward.</span></h1>
+      <p class="muted">One clear place for urgent work, ownership and decisions.</p>
+      <form id="login-form" class="stack">
+        <label>Email address<input id="email" type="email" value="lead@newtonite.local" required autocomplete="username"></label>
+        <label>Password<input id="password" type="password" value="LeadDemo!2026" required autocomplete="current-password"></label>
+        <button class="btn primary full" type="submit">Sign in <span>→</span></button>
+      </form>
+      <div class="demo-note"><strong>Demo account</strong><br>lead@newtonite.local · LeadDemo!2026</div>
+    </div>
+    <div class="login-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-card"><span class="dot green"></span><span>Operations health</span><strong>All systems focused</strong><div class="art-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small>Make every handoff visible.</small></div><div class="floating-tag tag-a">↗ Ownership clear</div><div class="floating-tag tag-b">✦ Less work lost</div></div>
+  </section>
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark small">N</span><span>newtonite<small>OPERATIONS</small></span></a>
+      <div class="nav-label">WORKSPACE</div>
+      <button type="button" class="nav-item active" data-view="all"><span>▦</span> Overview</button>
+      <button type="button" class="nav-item" data-view="mine"><span>◎</span> Assigned to me</button>
+      <button type="button" class="nav-item" data-view="urgent"><span>⚑</span> Unassigned urgent</button>
+      <button type="button" class="nav-item" data-view="approval"><span>◷</span> Awaiting approval</button>
+      <div class="sidebar-bottom"><div class="team-chip"><span class="team-icon">◈</span><span><small>YOUR WORKSPACE</small><strong id="team-name">Loading teams</strong></span></div><div class="user-chip"><div class="avatar" id="user-avatar">L</div><span><strong id="user-name">User</strong><small id="user-role">Team member</small></span><button id="logout" title="Sign out" aria-label="Sign out">↗</button></div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><p class="eyebrow" id="date-label">OPERATIONS / TODAY</p><h2 id="page-title">Good work starts with clarity.</h2></div><div class="top-actions"><span class="live-pill"><i></i> Workspace live</span><button class="btn primary" id="new-task">＋ New work item</button></div></header>
+      <div class="content">
+        <section class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Total work items</span><span class="stat-icon violet">▦</span></div><strong id="stat-total">—</strong><small><span class="stat-dot violet-dot"></span>Across your teams</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Open</span><span class="stat-icon blue">◷</span></div><strong id="stat-open">—</strong><small>Needs a next step</small></article>
+          <article class="stat-card"><div class="stat-top"><span>In progress</span><span class="stat-icon green">↗</span></div><strong id="stat-progress">—</strong><small>Actively being worked</small></article>
+          <article class="stat-card urgent-stat"><div class="stat-top"><span>Urgent attention</span><span class="stat-icon red">⚑</span></div><strong id="stat-urgent">—</strong><small>Unresolved urgent items</small></article>
+        </section>
+        <section class="work-panel">
+          <div class="panel-heading"><div><p class="eyebrow">YOUR QUEUE</p><h3 id="list-title">All work items <span id="result-count" class="count-badge">0</span></h3></div><button class="btn secondary" id="refresh">↻ Refresh</button></div>
+          <div class="filters"><div class="search-box"><span>⌕</span><input id="search" placeholder="Search work items…"></div><select id="filter-status"><option value="">All statuses</option><option>Open</option><option>In Progress</option><option>Awaiting Approval</option><option>Resolved</option><option>Closed</option></select><select id="filter-priority"><option value="">All priorities</option><option>Urgent</option><option>High</option><option>Medium</option><option>Low</option></select><select id="filter-team"><option value="">All teams</option></select></div>
+          <div class="table-wrap"><table><thead><tr><th>WORK ITEM</th><th>PRIORITY</th><th>STATUS</th><th>TEAM</th><th>OWNER</th><th></th></tr></thead><tbody id="items-body"><tr><td colspan="6" class="empty-cell">Loading work items…</td></tr></tbody></table></div>
+          <div class="table-footer"><span id="page-info">Showing 0 items</span><div class="pager"><button id="prev-page" class="btn secondary tiny">←</button><span id="page-number">1 / 1</span><button id="next-page" class="btn secondary tiny">→</button></div></div>
+        </section>
+        <footer class="footer-note"><span>●</span> A clear owner. A visible history. Better outcomes.</footer>
+      </div>
+    </main>
+  </div>
+  <div id="modal-backdrop" class="modal-backdrop hidden"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><div><p class="eyebrow">WORK ITEM DETAILS</p><h3 id="modal-title">New work item</h3></div><button class="icon-button" id="close-modal" aria-label="Close">×</button></div><div id="modal-content"></div></section></div>
+  <script src="/static/app.js"></script>
+</body></html>
